@@ -1,0 +1,647 @@
+/* ========================================
+   GLOBAL
+   ======================================== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* ======================================== 
+   NAVBAR
+   ========================================  */
+
+   .auth-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d8e0ea;
+    box-shadow: 0 2px 8px rgba(15, 35, 70, 0.07);
+
+    min-height: 68px;
+    padding: 0 24px;
+}
+
+.navbar-content {
+    min-height: 68px;
+}
+
+
+/* ======================================== 
+   BRAND
+   ========================================  */
+
+.auth-navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #173b6c;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.auth-navbar-brand:hover {
+    color: #0f294b;
+}
+
+
+/* ======================================== 
+   NAVIGATION LINKS
+   ========================================  */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    border: 1px solid #d8e0ea;
+    border-radius: 8px;
+    overflow: hidden;
+
+    background-color: #f7f9fc;
+}
+
+.navbar-links .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links .nav-item + .nav-item {
+    border-left: 1px solid #d8e0ea;
+}
+
+.navbar-links .nav-link {
+    display: flex;
+    align-items: center;
+
+    min-height: 42px;
+    padding: 0 22px;
+
+    color: #173b6c;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.navbar-links .nav-link:hover {
+    background-color: #173b6c;
+    color: #ffffff;
+}
+
+/* ========================================
+   AUTHENTICATION
+   ======================================== */
+
+.auth-page {
+    min-height: 100vh;
+    background-color: #f4f6f9;
+
+    /* Posizione del contenuto */
+    align-items: flex-start !important;
+    padding-top: 8vh !important;
+}
+
+.auth-wrapper {
+    max-width: 440px;
+    width: 100%;
+}
+
+.auth-brand-icon {
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.auth-card {
+    border: 1px solid #dbe1e8;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.75rem 2rem rgba(13, 45, 78, 0.12);
+    overflow: hidden;
+}
+
+.auth-card-header {
+    border-top: 5px solid #0d3b66;
+    padding: 2rem 2.5rem 0;
+}
+
+.auth-card-body {
+    padding: 0 2.5rem 2.5rem;
+}
+
+.auth-card .form-control {
+    border-radius: 0.65rem;
+    border: 1px solid #cfd6df;
+}
+
+.auth-card .form-control:focus {
+    border-color: #0d3b66;
+    box-shadow: 0 0 0 0.2rem rgba(13, 59, 102, 0.15);
+}
+
+.auth-button {
+    background-color: #0d3b66;
+    border-color: #0d3b66;
+    border-radius: 0.65rem;
+}
+
+.auth-button:hover {
+    background-color: #092f52;
+    border-color: #092f52;
+}
+
+/* =========================================================
+   PAGINA HOME
+   ========================================================= */
+
+.matchday-home {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 28px 60px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.matchday-header {
+    margin-bottom: 36px;
+}
+
+.matchday-header h1 {
+    margin: 0 0 8px;
+
+    color: #173b6c;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.matchday-header p {
+    margin: 0;
+
+    color: #66758a;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   SEZIONI
+   ========================================================= */
+
+.competition-section,
+.competition-search {
+    margin-bottom: 34px;
+}
+
+.section-heading {
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+
+    color: #173b6c;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: #748196;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RICERCA CAMPIONATO
+   ========================================================= */
+
+.competition-search {
+    padding: 24px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #d8e0ea;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 35, 70, 0.05);
+}
+
+.competition-search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.competition-search-form label {
+    color: #31445f;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.search-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.search-controls input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 44px;
+    padding: 0 14px;
+
+    color: #1c2d44;
+    background-color: #f7f9fc;
+
+    border: 1px solid #d6dee9;
+    border-radius: 8px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-controls input:focus {
+    border-color: #173b6c;
+    box-shadow: 0 0 0 3px rgba(23, 59, 108, 0.10);
+}
+
+.search-controls button {
+    height: 44px;
+    padding: 0 22px;
+
+    color: #ffffff;
+    background-color: #173b6c;
+
+    border: 1px solid #173b6c;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.search-controls button:hover {
+    background-color: #0f294b;
+    border-color: #0f294b;
+}
+
+
+/* =========================================================
+   CARD CAMPIONATO
+   ========================================================= */
+
+.competition-card {
+    background-color: #ffffff;
+
+    border: 1px solid #d8e0ea;
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 10px rgba(15, 35, 70, 0.05);
+}
+
+
+/* =========================================================
+   HEADER CAMPIONATO
+   ========================================================= */
+
+.competition-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 22px;
+
+    background-color: #f7f9fc;
+
+    border-bottom: 1px solid #d8e0ea;
+}
+
+.competition-info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.competition-info h3 {
+    margin: 0 0 3px;
+
+    color: #173b6c;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.competition-info span {
+    color: #748196;
+    font-size: 13px;
+}
+
+.competition-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    color: #173b6c;
+    background-color: #eaf0f7;
+
+    border: 1px solid #d2dce8;
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.competition-date {
+    padding: 6px 11px;
+
+    color: #173b6c;
+    background-color: #eaf0f7;
+
+    border: 1px solid #d2dce8;
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PARTITE
+   ========================================================= */
+
+.matches-grid {
+    display: grid;
+
+    /*
+     * 3 partite per riga.
+     * Ogni colonna occupa almeno un terzo dello spazio.
+     */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    padding: 20px;
+}
+
+
+/* =========================================================
+   CARD PARTITA
+   ========================================================= */
+
+.match-card {
+    padding: 16px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e0e6ee;
+    border-radius: 10px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.match-card:hover {
+    border-color: #bdc9d8;
+
+    box-shadow: 0 4px 12px rgba(15, 35, 70, 0.07);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   STATO E ORARIO
+   ========================================================= */
+
+.match-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+
+    color: #7a8798;
+    font-size: 11px;
+}
+
+.match-status span {
+    color: #4e5f73;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+.match-status time {
+    color: #7a8798;
+}
+
+
+/* =========================================================
+   SQUADRE
+   ========================================================= */
+
+.match-teams {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.home-team {
+    justify-content: flex-end;
+}
+
+.away-team {
+    justify-content: flex-start;
+}
+
+.team-name {
+    color: #283a52;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.team-short-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    color: #173b6c;
+    background-color: #eef3f8;
+
+    border: 1px solid #d9e2ec;
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RISULTATO
+   ========================================================= */
+
+.match-score {
+    min-width: 55px;
+
+    color: #173b6c;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   STATO VUOTO
+   ========================================================= */
+
+.empty-state {
+    grid-column: 1 / -1;
+
+    margin: 0;
+    padding: 20px;
+
+    color: #748196;
+
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   COMPETIZIONI MULTIPLE
+   ========================================================= */
+
+.major-competitions {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .matches-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .matchday-home {
+        padding: 28px 16px 40px;
+    }
+
+    .matchday-header h1 {
+        font-size: 28px;
+    }
+
+    .competition-card-header {
+        padding: 16px;
+    }
+
+    .matches-grid {
+        grid-template-columns: 1fr;
+        padding: 14px;
+    }
+
+    .search-controls {
+        flex-direction: column;
+    }
+
+    .search-controls button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .competition-card-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .competition-date {
+        flex-shrink: 0;
+    }
+
+    .team-name {
+        font-size: 12px;
+    }
+
+    .match-score {
+        font-size: 16px;
+        min-width: 48px;
+    }
+
+}

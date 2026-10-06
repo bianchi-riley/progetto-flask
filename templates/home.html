@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+
+{% block title %}Matchday - Home{% endblock %}
+
+{% block content %}
+
+<div class="matchday-home">
+
+    <!-- HEADER -->
+    <header class="matchday-header">
+        <h1>Risultati di oggi</h1>
+        <p>Partite concluse durante la giornata</p>
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- RICERCA CAMPIONATO -->
+    <!-- ========================================================= -->
+
+    <section class="competition-search">
+
+        <div class="section-heading">
+            <h2>Cerca campionato</h2>
+            <p>Trova rapidamente un campionato disponibile</p>
+        </div>
+
+        <form
+            class="competition-search-form"
+            method="GET"
+            action="{{ url_for('frontend.home') }}"
+        >
+
+            <label for="competition-search">
+                Seleziona un campionato
+            </label>
+
+            <div class="search-controls">
+
+                <input
+                    type="text"
+                    id="competition-search"
+                    name="competition"
+                    list="competitions"
+                    placeholder="Cerca un campionato..."
+                    value="{{ selected_competition or '' }}"
+                >
+
+                <datalist id="competitions">
+                    {% for competition in competitions %}
+                        <option value="{{ competition.name }}">
+                    {% endfor %}
+                </datalist>
+
+                <button type="submit">
+                    Cerca
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- TOP CAMPIONATO REGIONALE -->
+    <!-- ========================================================= -->
+
+    {% if regional_competition %}
+
+    <section class="competition-section regional-section">
+
+        <div class="section-heading">
+            <h2>Top campionato della tua regione</h2>
+            <p>Il principale campionato della tua area</p>
+        </div>
+
+
+        <div class="competition-card">
+
+            <div class="competition-card-header">
+
+                <div class="competition-info">
+
+                    <div class="competition-badge">
+                        {{ regional_competition.competition.name[:3]|upper }}
+                    </div>
+
+                    <div>
+                        <h3>
+                            {{ regional_competition.competition.name }}
+                        </h3>
+
+                        <span>
+                            {{ regional_competition.competition.country }}
+                        </span>
+                    </div>
+
+                </div>
+
+                <span class="competition-date">
+                    Oggi
+                </span>
+
+            </div>
+
+
+            <div class="matches-grid">
+
+                {% for match in regional_competition.matches %}
+
+                <div class="match-card">
+
+                    <div class="match-status">
+                        <span>FINITA</span>
+                        <time>
+                            {{ match.date.strftime('%H:%M') }}
+                        </time>
+                    </div>
+
+
+                    <div class="match-teams">
+
+                        <div class="team home-team">
+
+                            <span class="team-name">
+                                {{ match.home_team.name }}
+                            </span>
+
+                            <div class="team-short-name">
+                                {{ match.home_team.name[:3]|upper }}
+                            </div>
+
+                        </div>
+
+
+                        <div class="match-score">
+                            {{ match.home_score }} - {{ match.away_score }}
+                        </div>
+
+
+                        <div class="team away-team">
+
+                            <div class="team-short-name">
+                                {{ match.away_team.name[:3]|upper }}
+                            </div>
+
+                            <span class="team-name">
+                                {{ match.away_team.name }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% else %}
+
+                <p class="empty-state">
+                    Nessuna partita conclusa oggi.
+                </p>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- ========================================================= -->
+    <!-- MAGGIORI COMPETIZIONI -->
+    <!-- ========================================================= -->
+
+    <section class="competition-section">
+
+        <div class="section-heading">
+            <h2>Maggiori competizioni</h2>
+            <p>I principali campionati e tornei internazionali</p>
+        </div>
+
+
+        <div class="major-competitions">
+
+            {% for group in major_competitions %}
+
+            <div class="competition-card">
+
+                <div class="competition-card-header">
+
+                    <div class="competition-info">
+
+                        <div class="competition-badge">
+                            {{ group.competition.name[:3]|upper }}
+                        </div>
+
+                        <div>
+                            <h3>
+                                {{ group.competition.name }}
+                            </h3>
+
+                            <span>
+                                {{ group.competition.country }}
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <span class="competition-date">
+                        Oggi
+                    </span>
+
+                </div>
+
+
+                <div class="matches-grid">
+
+                    {% for match in group.matches %}
+
+                    <div class="match-card">
+
+                        <div class="match-status">
+                            <span>FINITA</span>
+
+                            <time>
+                                {{ match.date.strftime('%H:%M') }}
+                            </time>
+                        </div>
+
+
+                        <div class="match-teams">
+
+                            <div class="team home-team">
+
+                                <span class="team-name">
+                                    {{ match.home_team.name }}
+                                </span>
+
+                                <div class="team-short-name">
+                                    {{ match.home_team.name[:3]|upper }}
+                                </div>
+
+                            </div>
+
+
+                            <div class="match-score">
+                                {{ match.home_score }} - {{ match.away_score }}
+                            </div>
+
+
+                            <div class="team away-team">
+
+                                <div class="team-short-name">
+                                    {{ match.away_team.name[:3]|upper }}
+                                </div>
+
+                                <span class="team-name">
+                                    {{ match.away_team.name }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <p class="empty-state">
+                Nessuna partita disponibile oggi.
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}

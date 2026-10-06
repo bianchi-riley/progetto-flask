@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Matchday - Sign Up{% endblock %}
+
+{% block content %}
+
+<div class="auth-page d-flex align-items-center justify-content-center py-5">
+
+    <div class="auth-wrapper">
+
+        <!-- Brand -->
+        <div class="text-center mb-4">
+            <div class="auth-brand-icon mb-2">
+                ⚽
+            </div>
+
+            <h1 class="fw-bold text-primary mb-1">
+                Matchday
+            </h1>
+
+            <p class="text-secondary mb-0">
+                Football results
+            </p>
+        </div>
+
+        <!-- Sign Up -->
+        <div class="auth-card">
+
+            <div class="auth-card-header">
+                <h3 class="fw-bold text-dark mb-1">
+                    Sign Up
+                </h3>
+
+                <p class="text-secondary mb-4">
+                    Crea il tuo account
+                </p>
+            </div>
+
+            <div class="auth-card-body">
+
+                <form method="POST" action="signup">
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-semibold">
+                            Email
+                        </label>
+
+                        <input
+                            class="form-control form-control-lg"
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Inserisci la tua email"
+                            autocomplete="email"
+                            autofocus
+                            required
+                        >
+                    </div>
+
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label fw-semibold">
+                            Nome
+                        </label>
+
+                        <input
+                            class="form-control form-control-lg"
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder="Inserisci il tuo nome"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-4">
+                        <label for="password" class="form-label fw-semibold">
+                            Password
+                        </label>
+
+                        <input
+                            class="form-control form-control-lg"
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Inserisci la tua password"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="d-grid">
+                        <button
+                            type="submit"
+                            class="btn btn-primary btn-lg auth-button fw-semibold"
+                        >
+                            Registrati
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-3">
+            <small class="text-secondary">
+                Matchday · Football results
+            </small>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

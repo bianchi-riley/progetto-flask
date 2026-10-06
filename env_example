@@ -1,2 +1,4 @@
 SQLALCHEMY_DATABASE_URI="mysql+pymysql://user:password@localhost/mydb?charset=utf8mb4"
 SECRET_KEY="your-super-secret-key-here"
+
+API_KEY="the-api-key"
